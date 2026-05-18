@@ -12,9 +12,7 @@ const registration = async (req, res) => {
   });
 
   await newUser.save();
-
   sendMail(email, username, newUser._id);
-
   res.status(201).json({
     message: "User registered successfully",
     user: newUser,
