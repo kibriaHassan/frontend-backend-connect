@@ -8,8 +8,6 @@ const roleValidationMiddleware = async (req, res, next) => {
 
   const user = await User.findOne({ _id: decodedToken.id });
 
-
-
   if (user.role === "admin") {
     next();
   } else {
